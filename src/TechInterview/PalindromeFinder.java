@@ -19,7 +19,7 @@ public class PalindromeFinder<E> {
 	
 	/*
 	 * Method to change the linkedlist that needs to be checked.
-	 * Helps to prevent from having to create multiple PalindromeFinders
+	 * Allows one PalindromeFinder to check multiple lists for palindromes
 	 */
 	public void changeLinkedList(SinglyLinkedList<E> list) {
 		this.list = list;
@@ -48,8 +48,10 @@ public class PalindromeFinder<E> {
 		
 		//Attempts to match each element remaining in the list to each element stored in the stack
 		while(i < list.size()) {
+			//If the element in the list does not match the element in the stack, then exit the loop
 			if(!(list.get(i).equals(stack.pop())))
 				break;
+			//If the loop has reached the end of the list without any mismatches, then the list is a palindrome
 			if(i == list.size() - 1)
 				return true;
 			
@@ -63,29 +65,35 @@ public class PalindromeFinder<E> {
 
 	public static void main(String[] args) {
 		/*
-		 * Tests
-		 * evenPalin (first print statement) should be true
-		 * oddPalin (second print statement) should be true
-		 * notPalin (third print statement) should be false
+		 * Tests:
+		 * evenPalin (first print statement) should be true (tests lists of even sizes)
+		 * oddPalin (second print statement) should be true (tests lists of odd sizes)
+		 * notPalin (third print statement) should be false (tests lists that aren't palindromes)
+		 * empty (fourth print statement) should be false (tests lists that are empty)
 		 */
 		SinglyLinkedList<Integer> evenPalin = new SinglyLinkedList<>();
 		SinglyLinkedList<Integer> oddPalin = new SinglyLinkedList<>();
 		SinglyLinkedList<Integer> notPalin = new SinglyLinkedList<>();
 		SinglyLinkedList<Integer> empty= new SinglyLinkedList<>();
 		
+		//Adds the first set of elements to the linkedlist
 		for(int i = 1; i < 6; i++) {
 			evenPalin.add(i);
 			oddPalin.add(i);
 			notPalin.add(i);
 		}
 		
+		//Adds an extra element for the odd list
 		oddPalin.add(0);
 		
+		//Adds the remaining half of the elements to the linked list
+		//notPalin has elements shifted up by one in order to have it not be a palindrome
 		for(int i = 5; i > 0; i--) {
 			evenPalin.add(i);
 			oddPalin.add(i);
 			notPalin.add(i+1);
 		}
+		
 		PalindromeFinder<Integer> palinFinder = new PalindromeFinder<>(evenPalin);
 		System.out.println(palinFinder.isPalindrome());
 		
