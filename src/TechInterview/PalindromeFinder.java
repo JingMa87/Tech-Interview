@@ -1,5 +1,14 @@
-package TechInterview
+package TechInterview;
 
+/**
+ * Given a linkedlist, find if the linkedlist is a palindrome.
+ * 
+ * Input: Generic linkedlist of any size
+ * 
+ * Output: If the linkedlist is a palindrome, isPalindrome returns true.
+ * Otherwise, isPalindrome returns false.
+ * 
+ */
 public class PalindromeFinder<E> {
 	
 	private SinglyLinkedList<E> list;
@@ -38,6 +47,7 @@ public class PalindromeFinder<E> {
 	 */
 	public boolean isPalindrome() {
 		int i = 0;
+		//Stores the first half of the linkedlist into the stack
 		while(i < (list.size() / 2)) {
 			stack.push(list.get(i));
 			i++;
@@ -57,7 +67,7 @@ public class PalindromeFinder<E> {
 			
 			i++;
 		}
-		
+		//If at any point the previous while loop breaks, then the list is not a palindrome, and return false.
 		return false;
 	}
 
