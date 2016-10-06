@@ -150,10 +150,10 @@ public class BitManipulation {
 		
 		int position = -1;
 		
-		// Find first 0th position
+		// Find position of 0 bit which is next to 1 bit
 		for(int i = num.length()-1; i >= 0; i--) {
 			if(num.charAt(i) == '0') {
-				position = num.length() - i -1;	
+				position = num.length() - i - 1;	
 			} else if(position != -1 && num.charAt(i) == '1') {
 				break;
 			}
@@ -165,8 +165,18 @@ public class BitManipulation {
 		}
 		
 		int nxtSmallNum = updateBitOnNthPosition(binum, 1, position);
-		nxtSmallNum = updateBitOnNthPosition(nxtSmallNum, 0, position+1);
+		nxtSmallNum = updateBitOnNthPosition(nxtSmallNum, 0, position + 1);
 		
+		if(position == 0) {
+			// Find position of 0 bit which is next to 1 bit
+			for(int i = num.length()-2; i >= 0; i--) {
+				if(num.charAt(i) == '0') {
+					position = num.length() - i - 1;	
+				} else if(position != 0 && num.charAt(i) == '1') {
+					break;
+				}
+			}
+		}
 		int nxtLargeNum = updateBitOnNthPosition(binum, 1, position);
 		nxtLargeNum = updateBitOnNthPosition(nxtLargeNum, 0, position-1);
 		
@@ -193,5 +203,6 @@ public class BitManipulation {
 		bm.printMessage("==== Next Number ====");
 		bm.nextNumber("203");
 		bm.nextNumber("999");
+		bm.nextNumber("26");
 	}
 }
