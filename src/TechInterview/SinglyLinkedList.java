@@ -44,7 +44,7 @@ public class SinglyLinkedList<E> {
     }
     
     public E get(int index) {
-        if (index > 0 && index < size) {
+        if (index >= 0 && index < size) {
             Node curr = head;
             for (int i = 0; i <= index; i++) {
                 curr = curr.next;
@@ -81,8 +81,10 @@ public class SinglyLinkedList<E> {
         return sb.toString();
     }
     
+    public int size() {
     	return size;
     }
+    
     public class Node {
 
         private Node next;
