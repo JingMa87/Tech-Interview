@@ -81,6 +81,8 @@ public class SinglyLinkedList<E> {
         return sb.toString();
     }
     
+    	return size;
+    }
     public class Node {
 
         private Node next;
