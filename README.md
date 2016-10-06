@@ -1,7 +1,7 @@
 # README
 <img src="https://s-media-cache-ak0.pinimg.com/564x/2d/8e/e8/2d8ee815146390d567706f2c7b5c2916.jpg" width="300">
 
-This is a repo consisting algorithms and data structures that I implemented in Java.
+This is a repo consisting of algorithms and data structures that I've implemented in Java.
 
 Every .java file deals with a different interview question.
 
