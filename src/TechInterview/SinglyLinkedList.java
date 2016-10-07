@@ -54,11 +54,11 @@ public class SinglyLinkedList<E> {
         return null;
     }
     
-    public void reverseOrder() {
+    public void reverseOrderIteratively() {
         Node prev = null;
         Node curr = head;
         Node next;
-        
+
         while (curr != null) {
             next = curr.next;
             curr.next = prev;
@@ -66,6 +66,30 @@ public class SinglyLinkedList<E> {
             curr = next;
         }
         head.next = prev;
+    }
+
+    public void reverseOrderRecursively() {
+        Node prev = null;
+        Node curr = head;
+
+        if (head == null) {
+            return;
+        } else {
+            reverseHelper(curr, prev);
+        }
+    }
+
+    Node reverseHelper(Node curr, Node prev) {
+        if (curr.next == null) {
+            head = curr;
+            curr.next = prev;
+            return null;
+        }
+
+        Node next = curr.next;
+        curr.next = prev;
+        reverseHelper(next, curr);
+        return head;
     }
     
     @Override
@@ -114,7 +138,10 @@ public class SinglyLinkedList<E> {
         ll.remove(0);
         System.out.println(ll);
         
-        ll.reverseOrder();
+        ll.reverseOrderIteratively();
+        System.out.println(ll);
+
+        ll.reverseOrderRecursively();
         System.out.println(ll);
     }
 }
