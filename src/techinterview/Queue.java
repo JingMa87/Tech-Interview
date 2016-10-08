@@ -1,4 +1,4 @@
-package TechInterview;
+package techinterview;
 
 public class Queue<E> {
 
