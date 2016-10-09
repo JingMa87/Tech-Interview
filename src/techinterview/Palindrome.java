@@ -1,8 +1,5 @@
 package techinterview;
 
-/**
- * Created by will on 10/8/16.
- */
 public class Palindrome {
     public static boolean is(String word) {
         if (word == null) {
