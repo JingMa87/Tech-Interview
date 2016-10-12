@@ -1,8 +1,7 @@
 package TechInterview;
 
 public class Parenthesis {
-
-
+    
 //    Implement an algorithm to print all valid (e.g., properly opened and closed) combinations
 //    of n-pairs of parentheses.
 
@@ -20,7 +19,6 @@ public class Parenthesis {
 
     }
 
-
     public static void solution(int n) {
 
         parenthesis(n, 0, "");
@@ -32,9 +30,4 @@ public class Parenthesis {
         solution(3);
 
     }
-
 }
-
-
-
-
