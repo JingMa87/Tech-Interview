@@ -1,4 +1,4 @@
-package forhacktoberfest;
+package TechInterview;
 
 import java.util.function.LongSupplier;
 import java.util.stream.LongStream;
