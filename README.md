@@ -21,6 +21,16 @@ I don't accept pull request for very specialized algorithms and data structures.
 
 whether you should contribute certain code, discuss it with me in the Issue Tracker by opening a new Issue.
 
+
+Specified Format ( for exercise questions from book ) 
+
+- for file name
+  - *chapterName_questionNumber.java*
+  
+- for commit title
+  - *Add solution to problem question_number 'question_name'*
+  
+
 ---
 
 _Happy coding awesome people!_
