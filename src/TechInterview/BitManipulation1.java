@@ -4,7 +4,7 @@ import java.util.Scanner;
  * of chapter 'BitManipulation' from book 'Cracking the Coding Interview'.
  * @author akanksha bhardwaj
  */
-public class BitManipulation {
+public class BitManipulation1 {
     
     public void insertion(String N, String M, int i, int j) {
         int n = Integer.parseInt(N,2);
@@ -22,7 +22,7 @@ public class BitManipulation {
     }
     public static void main(String[] args) {
     
-        BitManipulation bm = new BitManipulation();
+        BitManipulation1 bm = new BitManipulation1();
         Scanner sc = new Scanner(System.in);
         String N = sc.next();
         String M  = sc.next();
