@@ -1,8 +1,7 @@
-package TechInterview;
+package techinterview;
 
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Stack;
 
 public class BinarySearchTree {
     

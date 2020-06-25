@@ -1,4 +1,4 @@
-package TechInterview;
+package techinterview;
 
 import java.util.Arrays;
 
